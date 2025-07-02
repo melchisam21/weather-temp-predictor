@@ -1,0 +1,65 @@
+#  Weather Max Temperature Predictor
+
+This is a **Streamlit web application** that predicts the **maximum daily temperature** based on current weather conditions using a machine learning model (XGBoost Regressor).
+
+> 🔗 Live App: [Click here to launch](https://streamlit.io/cloud)
+
+---
+
+##  Features
+
+- Predicts max temperature (°C) based on:
+  - Rainfall
+  - Humidity (9am & 3pm)
+  - Pressure (9am & 3pm)
+  - Temperature (9am & 3pm)
+  - Rain status
+  - Wind direction
+- Built with **XGBoost** trained on historical weather data
+- Interactive UI using **Streamlit**
+
+---
+
+##  Input Parameters
+
+| Feature         | Type     | Description                            |
+|-----------------|----------|----------------------------------------|
+| Rainfall        | Numeric  | Rainfall in mm                         |
+| Humidity9am     | Slider   | Humidity at 9am (%)                    |
+| Humidity3pm     | Slider   | Humidity at 3pm (%)                    |
+| Pressure9am     | Numeric  | Atmospheric pressure at 9am (hPa)      |
+| Pressure3pm     | Numeric  | Atmospheric pressure at 3pm (hPa)      |
+| Temp9am         | Slider   | Temperature at 9am (°C)                |
+| Temp3pm         | Slider   | Temperature at 3pm (°C)                |
+| RainToday       | Select   | Whether it rained today                |
+| WindDir3pm      | Select   | Wind direction at 3pm (categorical)    |
+
+---
+
+## Model
+
+- **Algorithm**: XGBoost Regressor
+- **Training**: Model trained on cleaned and preprocessed weather data
+- **File**: `xgb_model.json` (included in the repo)
+
+---
+
+## Installation & Run Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/weather-temp-predictor.git
+cd weather-temp-predictor
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the Streamlit app
+streamlit run app.py
+
+
+weather-temp-predictor/
+├── app.py              # Streamlit frontend
+├── xgb_model.json      # Trained XGBoost model
+└── requirements.txt    # Project dependencies
+
